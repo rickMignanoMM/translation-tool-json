@@ -22,9 +22,6 @@ jobs:
     - name: Install dependencies
       run: npm install
 
-    - name: Build the package
-      run: npm run build  # If you have a build step, otherwise skip this
-
     - name: Publish to NPM
       env:
         NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}  # Use the secret we added to authenticate with NPM
