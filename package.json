@@ -1,11 +1,12 @@
 {
   "name": "translation-tool-json",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "A translation tool using @vitalets/google-translate-api for translating JSON files into multiple languages",
   "main": "index.js",
   "bin": {
     "translate-tool-json": "index.js"
   },
+  "files": ["index.js"],
   "scripts": {
     "start": "node index.js"
   },
@@ -19,7 +20,7 @@
     "json",
     "multi-language"
   ],
-  "author": "Your Name",
+  "author": "Rick Mignano",
   "license": "MIT",
   "dependencies": {
     "fs-extra": "^11.1.1",
