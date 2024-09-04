@@ -1,6 +1,6 @@
 {
   "name": "translation-tool-json",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "A translation tool using @vitalets/google-translate-api for translating JSON files into multiple languages",
   "main": "index.js",
   "bin": {
