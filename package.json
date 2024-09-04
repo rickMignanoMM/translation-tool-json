@@ -1,25 +1,23 @@
 {
-    "name": "translation-tool-json",
-    "version": "1.0.3",
-    "description": "A translation tool using @vitalets/google-translate-api for translating JSON files into multiple languages",
-    "main": "index.js",
-    "bin": {
-      "translate-tool-json": "bin/cli.js"
-    },
-    "scripts": {
-      "start": "node index.js"
-    },
-    "repository": {
-      "type": "git",
-      "url": "https://github.com/rickMignanoMM/translation-tool-json.git"
-    },
-    "keywords": ["translation", "google-translate", "json", "multi-language"],
-    "author": "Rick Mignano",
-    "license": "MIT",
-    "dependencies": {
-      "fs-extra": "^11.1.1",
-      "readline-sync": "^1.4.10",
-      "@vitalets/google-translate-api": "^9.2.0"
-    }
+  "name": "translation-tool-json",
+  "version": "1.0.4",
+  "description": "A translation tool using @vitalets/google-translate-api for translating JSON files into multiple languages",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rickMignanoMM/translation-tool-json.git"
+  },
+  "keywords": ["translation", "google-translate", "json", "multi-language"],
+  "author": "Your Name",
+  "license": "MIT",
+  "dependencies": {
+    "fs-extra": "^11.1.1",
+    "readline-sync": "^1.4.10",
+    "@vitalets/google-translate-api": "^6.1.4"
   }
+}
+
   
