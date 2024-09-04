@@ -1,6 +1,6 @@
 {
     "name": "translation-tool-json",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "A translation tool using @vitalets/google-translate-api for translating JSON files into multiple languages",
     "main": "index.js",
     "bin": {
@@ -11,7 +11,7 @@
     },
     "repository": {
       "type": "git",
-      "url": "https://github.com/yourusername/your-repo.git"
+      "url": "https://github.com/rickMignanoMM/translation-tool-json.git"
     },
     "keywords": ["translation", "google-translate", "json", "multi-language"],
     "author": "Rick Mignano",
