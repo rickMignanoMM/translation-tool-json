@@ -17,20 +17,20 @@ This is a simple command-line tool that translates text into multiple languages 
 
 ## Installation
 
-Clone the repository and install the dependencies:
+Install the package from NPM:
 
 ```bash
-git clone https://github.com/yourusername/your-repo.git
-cd your-repo
-npm install
+npm install -g translation-tool-json
 ```
+
+This will install the package globally, allowing you to use it from anywhere on your system.
 
 ## Usage
 
-1. Run the script:
+1. Run the tool using the following command:
 
    ```bash
-   node src/translate.js
+   translate-tool-json
    ```
 
 2. You will be prompted to enter the following information:
