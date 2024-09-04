@@ -3,7 +3,7 @@ name: Publish NPM Package
 on:
   push:
     branches:
-      - main  # Trigger the workflow only on pushes to the 'main' branch
+      - main  # Only publish when pushing to the main branch
 
 jobs:
   publish:
@@ -16,16 +16,36 @@ jobs:
     - name: Set up Node.js
       uses: actions/setup-node@v2
       with:
-        node-version: '20'  # Ensure Node.js version is 20 or higher
+        node-version: '20'  # Make sure to use Node.js version 20 or higher
         registry-url: 'https://registry.npmjs.org/'
 
     - name: Install dependencies
       run: npm install
 
+    - name: Get current version from NPM
+      id: get_version
+      run: |
+        # Fetch the latest version from NPM and extract the version number
+        CURRENT_VERSION=$(npm show translation-tool-json version)
+        echo "Current version: $CURRENT_VERSION"
+        # Split version into major, minor, and patch
+        IFS='.' read -r MAJOR MINOR PATCH <<< "$CURRENT_VERSION"
+        # Increment the minor version
+        NEW_MINOR=$((MINOR + 1))
+        NEW_VERSION="$MAJOR.$NEW_MINOR.0"
+        echo "New version: $NEW_VERSION"
+        # Make the new version available to future steps
+        echo "NEW_VERSION=$NEW_VERSION" >> $GITHUB_ENV
+
+    - name: Update package.json version
+      run: |
+        # Update the version in package.json with the new version
+        npm version ${{ env.NEW_VERSION }} --no-git-tag-version
+
     - name: Publish to NPM
       env:
-        NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}  # Use the secret we added to authenticate with NPM
+        NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}  # NPM Token from GitHub Secrets
       run: npm publish
 
     - name: Post-publish cleanup
-      run: echo "Package published successfully!"
+      run: echo "Package published successfully with version ${{ env.NEW_VERSION }}!"
