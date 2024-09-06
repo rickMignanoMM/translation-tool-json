@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 // Import necessary modules
 const fs = require('fs-extra');  // fs-extra for working with file system (extends Node.js 'fs')
 const path = require('path');  // path for handling and transforming file paths
