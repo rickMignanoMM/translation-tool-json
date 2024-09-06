@@ -1,6 +1,6 @@
 {
   "name": "translation-tool-json",
-  "version": "1.0.9",
+  "version": "1.0.11",
   "description": "A translation tool using @vitalets/google-translate-api for translating JSON files into multiple languages",
   "main": "index.js",
   "bin": {
@@ -12,8 +12,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/rickMignanoMM/translation-tool-json.git"
+    "url": "https://github.com/rickmignanomm/translation-tool-json.git"
   },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+} ,
   "keywords": [
     "translation",
     "google-translate",
