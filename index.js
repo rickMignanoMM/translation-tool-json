@@ -1,7 +1,7 @@
 // Import necessary modules
 const fs = require('fs-extra');  // fs-extra for working with file system (extends Node.js 'fs')
 const path = require('path');  // path for handling and transforming file paths
-const { translate } = require('@vitalets/google-translate-api');  // Importing the translate function from google-translate-api
+const translate = require('@vitalets/google-translate-api');  // Importing the translate function from google-translate-api
 const readlineSync = require('readline-sync');  // For prompting user input in the command-line
 
 // Language code mappings (maps JSON filenames to valid language codes for translation)
@@ -83,6 +83,7 @@ async function runTranslation() {
                     await delay(500);
 
                     // Translate the provided key-value pair using the target language
+                    console.log('quoteToTranslate[keyQuote]', quoteToTranslate[keyQuote])
                     const translation = await translate(quoteToTranslate[keyQuote], { to: languageCode });
 
                     // Add or update the translated phrase in the JSON object
